@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Automated Preventive Medicine Checklist</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/grid.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container">
+
+    <div class="masthead">
+        <h3 class="text-muted">Automated Preventive Medicine Checklist</h3>
+        <ul class="nav nav-justified">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h1>Preventive Medicine Checklist</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-lg-4">
+            <h1>The Basics</h1>
+            <p>
+                <label for="numAge">Age</label>
+                <input type="text" name="numAge" id="numAge"  size=3/>
+            </p>
+            <p>
+                <label>
+                    <input type="radio" name="gender" value="female" id="gender" />
+                    Female</label>
+
+                <label>
+                    <input type="radio" name="gender" value="male" id="gender" />
+                    Male</label>
+            </p>
+            <p>
+                <input type="checkbox" name="ckPostMeno" id="ckPostMeno" />
+                <label for="ckPostMeno">Postmenopausal</label>
+            </p>
+            <p>
+                <label for="numHeightIn">Height</label>
+                <input type="text" name="numHeightIn" id="numHeightIn" size = 5
+                        />
+                inches</p>
+            <p>
+                <label for="numWeightLb">Weight</label>
+                <input type="text" name="numWeightLb" id="numWeightLb"  size=5/>
+                pounds</p>
+            <p style="color:gray">
+            <label for="numBmi">BMI</label>
+            <input type="text" name="numBmi" id="numBmi" readonly="readonly" size="3"/>
+            </p>
+            <p>
+                <input type="checkbox" name="ckBirthLoc" id="ckBirthLoc" />
+                <label for="ckBirthLoc">Born in Africa or Asia</label>
+            </p>
+            <p>
+                <input type="checkbox" name="ckWorkBloodExpo" id="ckWorkBloodExpo" />
+                <label for="ckWorkBloodExpo">Exposed to blood at work</label>
+            </p>
+            <p>
+                <input type="checkbox" name="ckLtCareRes" id="ckLtCareRes" />
+                <label for="ckLtCareRes">Long term care resident</label>
+            </p>
+            <p>
+                <input type="checkbox" name="ckCollegeStudentInDorm" id="ckCollegeStudentInDorm" />
+                <label for="ckCollegeStudentInDorm">College student living in dorm</label>
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <h2>More indications</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <h2>Recommendations</h2>
+            <div id="Results">
+                Hi Rich!
+                <div id="Recommendations">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site footer -->
+    <div class="footer">
+        <p>&copy; Company 2014</p>
+    </div>
+
+</div> <!-- /container -->
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script src="js/PreventiveMedicine.js"></script>
+<script>
+    $( document ).ready(function() {
+        $( "p" ).text( "The DOM is now loaded and can be manipulated." );
+    });
+</script>
+
+</body>
+</html>
