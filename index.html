@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>Automated Preventive Medicine Checklist</title>
+    <title>Preventive Medicine Checklist</title>
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 
@@ -26,10 +26,9 @@
 </head>
 
 <body>
-<div class="container">
-
-    <div class="masthead">
-        <h3 class="text-muted">Automated Preventive Medicine Checklist</h3>
+<br />
+    <!--<div class="masthead">-->
+        <!--<h3 class="text-muted">Automated Preventive Medicine Checklist</h3>-->
         <!--<ul class="nav nav-justified">-->
             <!--<li class="active"><a href="#">Home</a></li>-->
             <!--<li><a href="#">Projects</a></li>-->
@@ -38,170 +37,124 @@
             <!--<li><a href="#">About</a></li>-->
             <!--<li><a href="#">Contact</a></li>-->
         <!--</ul>-->
-    </div>
+    <!--</div>-->
 
     <!-- Jumbotron -->
     <div class="jumbotron">
         <h1>Preventive Medicine Checklist</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+        <p class="lead">
+            THIS IS THE PLACE TO SAY SOMETHING COOL. Motivation and goals for the project, etc.
+        </p>
     </div>
 
+<div class="container">
     <!-- Example row of columns -->
     <div class="row">
-        <div class="col-lg-4">
-            <form id="basics_form" name="basics_form" method="post" action="">
-                <h2>The Basics</h2>
-                <p>
-                    <label for="numAge">Age</label>
-                    <input class="ptIn" type="text" name="numAge" id="numAge"  size=3/>
-                </p>
-                <p>
-                    <label>
-                        <input class="ptIn"  type="radio" name="gender" value="female" id="gender" />
-                        Female</label>
+        <div class="col-lg-4" id="left-column">
+            <h2>The Basics</h2>
 
-                    <label>
-                        <input class="ptIn"  type="radio" name="gender" value="male" id="gender" />
-                        Male</label>
-                </p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ckPostMeno" id="ckPostMeno" />
-                    <label for="ckPostMeno">Postmenopausal</label>
-                </p>
-                <p>
-                    <label for="numHeightIn">Height</label>
-                    <input class="ptIn"  type="text" name="numHeightIn" id="numHeightIn" size = 5
-                            />
-                    inches</p>
-                <p>
-                    <label for="numWeightLb">Weight</label>
-                    <input class="ptIn"  type="text" name="numWeightLb" id="numWeightLb"  size=5/>
-                    pounds</p>
-                <p style="color:gray";>
-                <label for="numBmi">BMI</label>
-                <input class="ptIn"  type="text" name="numBmi" id="numBmi" readonly="readonly" size="3"/>
-                </p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ckBirthLoc" id="ckBirthLoc" />
-                    <label for="ckBirthLoc">Born in Africa or Asia</label>
-                </p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ckWorkBloodExpo" id="ckWorkBloodExpo" />
-                    <label for="ckWorkBloodExpo">Exposed to blood at work</label>
-                </p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ckLtCareRes" id="ckLtCareRes" />
-                    <label for="ckLtCareRes">Long term care resident</label>
-                </p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ckCollegeStudentInDorm" id="ckCollegeStudentInDorm" />
-                    <label for="ckCollegeStudentInDorm">College student living in dorm</label>
-                </p>
+            <label for="numAge">Age </label>
+            <input class="ptIn" type="text" name="numAge" id="numAge"  size=3/><br />
 
-                <p>&nbsp;</p>
 
-            </form>
-            <form id="healthHabits_form" name="healthHabits" method="post" action="">
-                <h2>Health Habits</h2>
-                <p>
-                    <input class="ptIn"  class="ptIn"  type="checkbox" name="ckSmoker" id="ckSmoker" />
-                    <label for="ckSmoker">Cigarette smoker</label>
-                </p>
-                <p>
-                    <input class="ptIn"  type="text" name="numPacksSmokeDay" id="numPacksSmokeDay" size="3" />
-                    <label for="numPacksSmokeDay">packs per day for</label>
-                    <input class="ptIn"  type="text" name="numYrsSmoke" id="numYrsSmoke" size="3"/>
-                    <label for="numYrsSmoke">years</label>
-                </p>
-                <p>
-                    <label for="numYrQuitSmoke">Quit in year</label>
-                    <input class="ptIn"  type="text" name="numYrQuitSmoke" id="numYrQuitSmoke" size="4" />
-                </p>
-                <p>&nbsp;</p>
-                <p>
+            <strong>Gender </strong><label>
+                <input class="ptIn" type="radio" name="gender" value="female" id="gender" />
+                Female</label>
 
-                    <input class="ptIn"  type="text" name="numDrinksWeek" id="numDrinksWeek" size ="3"/>
-                    <label for="numDrinksWeek">drinks per week</label>
-                </p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ck5gtDrink5Day" id="ck5gtDrink5Day" />
-                    <label for="ck5gtDrink5Day"></label>
-                    ever consumes > 5 drinks per day  </p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ckBadDrugs" id="ckBadDrugs" />
-                    <label for="ckBadDrugs">ever tried illicit drugs other than pot</label>
-                </p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ck1gtSexPartners" id="ck1gtSexPartners" />
-                    <label for="ck1gtSexPartners"></label>
-                    more than 1 current sexual partner</p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ckSexManMan" id="ckSexManMan" />
-                    <label for="ckSexManMan"></label>
-                    man who has sex with men</p>
-                <p>
-                    <input class="ptIn"  type="checkbox" name="ckSex1HrltWeek" id="ckSex1HrltWeek" />
-                    <label for="ckSex1HrltWeek"></label>
-                    active less than 1 hour per week</p>
-                <p>&nbsp;</p>
+            <label>
+                <input class="ptIn" type="radio" name="gender" value="male" id="gender" />
+                Male</label><br />
 
-            </form>
-            <form id="healthHabits_form" name="healthHabits" method="post" action="">
-                <h2>Family History  </h2>
-                <p>
-                    <label>
-                        <input class="ptIn"  type="checkbox" name="ckHFamilyAAAIssues" value="ckHFamilyAAAIssues" id="ckHFamilyAAAIssues" />
-                        parent or sibling had an AAA repair or died of AAA rupture</label>
-                    <br />
-                    <label>
-                        <input class="ptIn"  type="checkbox" name="ckHParentHipFrac" value="ckHParentHipFrac" id="ckHParentHipFrac" />
-                        parent had a hip fracture</label>
-                    <br />
-                    <label>
-                        <input class="ptIn"  type="checkbox" name="ckHFamilyDiabetes" value="ckHFamilyDiabetes" id="ckHFamilyDiabetes" />
-                        parent or sibling with diabetes</label>
-                    <br />
-                    <label>
-                        <input class="ptIn"  type="checkbox" name="ckHFamilyColCancerPolyps" value="ckHFamilyColCancerPolyps" id="ckHFamilyColCancerPolyps" />
-                        parent or sibling had colon cancer or polyps</label>
-                    <br />
-                    <input class="ptIn"  type="checkbox" name="ckHRelativeHemochromatosis" value="ckHRelativeHemochromatosis" id="ckHRelativeHemochromatosis" />
-                    any relative with hemochromatosis</label>
-                    <br />
-                    <input class="ptIn"  type="checkbox" name="ckHFatherBrotherProsCancer" value="ckHFatherBrotherProsCancer" id="ckHFatherBrotherProsCancer" />
-                    father or brother had prostate cancer</label>
-                    <br />
-                </p>
-                </p>
 
-            </form>
+            <label for="ckBPostMeno"><input class="ptIn" name="ckBPostMeno" type="checkbox" id="ckBPostMeno"> postmenopausal</label><br />
+
+
+            <label for="numHeightIn">Height</label>
+            <input class="ptIn" type="text" name="numHeightIn" id="numHeightIn" size = 5/>
+            inches<br />
+
+            <label for="numWeightLb">Weight</label>
+            <input class="ptIn" type="text" name="numWeightLb" id="numWeightLb"  size=5/>
+            pounds<br />
+
+
+            <label for="numBmi">BMI</label>
+            <input class="ptIn" type="text" name="numBmi" id="numBmi" readonly="readonly" size="3"/><br />
+            <label for="ckBBirthAfAs"><input class="ptIn" name="ckBBirthAfAs" type="checkbox" id="ckBBirthAfAs"> Birthplace: Africa or Asia</label><br />
+            <label for="ckBWorkBloodExpo"><input class="ptIn" name="ckBWorkBloodExpo" type="checkbox" id="ckBWorkBloodExpo"> occupational blood exposure</label><br />
+            <label for="ckBLtCareRes"><input class="ptIn" name="ckBLtCareRes" type="checkbox" id="ckBLtCareRes"> long-term care resident</label><br />
+            <label for="ckBCollegeStudentInDorm"><input class="ptIn" name="ckBCollegeStudentInDorm" type="checkbox" id="ckBCollegeStudentInDorm"> college student living in residence halls</label><br />
+
+            <!--<label for="gender"><input class="ptIn" name="gender" type="checkbox" id="gender"> Gender</label><br />-->
+            <label for="ckSexuallyActive"><input class="ptIn" name="ckSexuallyActive" type="checkbox" id="ckSexuallyActive"> sexually active</label><br />
+            <!--<label for="numBmi"><input class="ptIn" name="numBmi" type="checkbox" id="numBmi"> BMI</label><br />-->
+            <h3>Health Habits</h3>
+            <label for="ckHSmoker"><input class="ptIn" name="ckHSmoker" type="checkbox" id="ckHSmoker"> current cigarette smoker</label><br />
+
+
+            <label for="numPacks"><input class="ptIn" type="text" name="numPacks" id="numPacks"  size=3/> packs per day for </label>
+            <label for="numSmokeYears"><input class="ptIn" type="text" name="numSmokeYears" id="numSmokeYears"  size=3/> years</label> <br />
+            <label for="numQuitInYear">Quit in <input class="ptIn" type="text" name="numQuitInYear" id="numQuitInYear"  size=3/></label> <br />
+            <label for="numDrinksPerWk"><input class="ptIn" type="text" name="numDrinksPerWk" id="numDrinksPerWk"  size=3/> drinks per week</label> <br />
+
+            <label for="ckH5gtDrink5Day"><input class="ptIn" name="ckH5gtDrink5Day" type="checkbox" id="ckH5gtDrink5Day"> >5 drinks on occasions</label><br />
+            <label for="ckHBadDrugs"><input class="ptIn" name="ckHBadDrugs" type="checkbox" id="ckHBadDrugs"> illicit drug use</label><br />
+            <label for="ckInjectionDrug"><input class="ptIn" name="ckInjectionDrug" type="checkbox" id="ckInjectionDrug"> injection-drug users</label><br />
+            <label for="ckH1gtSexPartners"><input class="ptIn" name="ckH1gtSexPartners" type="checkbox" id="ckH1gtSexPartners"> multiple partners</label><br />
+            <label for="ckHSexManMan"><input class="ptIn" name="ckHSexManMan" type="checkbox" id="ckHSexManMan"> man who has sex with men</label><br />
+            <label for="ckHActiveHrltWeek"><input class="ptIn" name="ckHActiveHrltWeek" type="checkbox" id="ckHActiveHrltWeek"> active less than 1 hour per week</label><br />
+
+            <h3>Family History</h3>
+            <label for="ckFHXAAA"><input class="ptIn" name="ckFHXAAA" type="checkbox" id="ckFHXAAA"> FHx of abdominal aortic aneurysm</label><br />
+            <label for="ckFFamilyDiabetes"><input class="ptIn" name="ckFFamilyDiabetes" type="checkbox" id="ckFFamilyDiabetes"> FHx* of DM</label><br />
+            <label for="ckFParentHipFrac"><input class="ptIn" name="ckFParentHipFrac" type="checkbox" id="ckFParentHipFrac"> parental had a hip fracture</label><br />
+            <label for="ckFFamilyColCancerPolyps"><input class="ptIn" name="ckFFamilyColCancerPolyps" type="checkbox" id="ckFFamilyColCancerPolyps"> parent or sibling had colon cancer or polyps</label><br />
+            <label for="ckFRelativeHemochromatosis"><input class="ptIn" name="ckFRelativeHemochromatosis" type="checkbox" id="ckFRelativeHemochromatosis"> any relative with hemochromatosis</label><br />
+            <label for="ckFFatherBrotherProsCancer"><input class="ptIn" name="ckFFatherBrotherProsCancer" type="checkbox" id="ckFFatherBrotherProsCancer"> FHx of prostate cancer</label><br />
         </div>
-        <div class="col-lg-4">
-            <h2>Personal Medical History</h2>
-            <p>
-            <input class="ptIn"  type="checkbox" name="ckBirthLoc" id="ckBirthLoc" class="pmIn"/>
-            <label for="ckBirthLoc">Born in Africa or Asia</label>
-            </p>
-            <p>
-                <input class="ptIn"  type="checkbox" name="ckWorkBloodExpo" id="ckWorkBloodExpo"class="pmIn" />
-                <label for="ckWorkBloodExpo">Exposed to blood at work</label>
-            </p>
-            <p>
-                <input class="ptIn"  type="checkbox" name="ckLtCareRes" id="ckLtCareRes" class="pmIn"/>
-                <label for="ckLtCareRes">Long term care resident</label>
-            </p>
-            <p>
-                <input class="ptIn"  type="checkbox" name="ckCollegeStudentInDorm" id="ckCollegeStudentInDorm" class="pmIn"/>
-                <label for="ckCollegeStudentInDorm">College student living in dorm</label>
-            </p>
+        <div class="col-lg-4" id="middle-column">
+            <h2>Personal Medical History  </h2>
+            <label for="ckPAbnormalPapSmear"><input class="ptIn" name="ckPAbnormalPapSmear" type="checkbox" id="ckPAbnormalPapSmear"> abnormal pap smear</label><br />
+            <label for="ckPAsthma"><input class="ptIn" name="ckPAsthma" type="checkbox" id="ckPAsthma"> asthma</label><br />
+            <label for="ckPCardioDisease"><input class="ptIn" name="ckPCardioDisease" type="checkbox" id="ckPCardioDisease"> cardiovascular disease</label><br />
+            <label for="ckPCeliacDisease"><input class="ptIn" name="ckPCeliacDisease" type="checkbox" id="ckPCeliacDisease"> celiac disease</label><br />
+            <label for="ckPChemotherapy"><input class="ptIn" name="ckPChemotherapy" type="checkbox" id="ckPChemotherapy"> chemotherapy (starting or current)</label><br />
+            <label for="ckPChronicLiver"><input class="ptIn" name="ckPChronicLiver" type="checkbox" id="ckPChronicLiver"> chronic liver disease (incl. cirrhosis)</label><br />
+            <label for="ckPChronicRenal"><input class="ptIn" name="ckPChronicRenal" type="checkbox" id="ckPChronicRenal"> chronic renal failure</label><br />
+            <label for="ckPClottingFactorDefConcentrate"><input class="ptIn" name="ckPClottingFactorDefConcentrate" type="checkbox" id="ckPClottingFactorDefConcentrate"> clotting factor requiring concentrates</label><br />
+            <label for="ckPCochlearImplants"><input class="ptIn" name="ckPCochlearImplants" type="checkbox" id="ckPCochlearImplants"> cochlear implants</label><br />
+            <label for="ckPComplementDef"><input class="ptIn" name="ckPComplementDef" type="checkbox" id="ckPComplementDef"> complement deficiencies</label><br />
+            <label for="ckPCOPD"><input class="ptIn" name="ckPCOPD" type="checkbox" id="ckPCOPD"> COPD</label><br />
+            <label for="ckPCSFLeaks"><input class="ptIn" name="ckPCSFLeaks" type="checkbox" id="ckPCSFLeaks"> CSF leaks</label><br />
+            <label for="ckPDiabetes"><input class="ptIn" name="ckPDiabetes" type="checkbox" id="ckPDiabetes"> diabetes</label><br />
+            <label for="ckEarlyMenopause"><input class="ptIn" name="ckEarlyMenopause" type="checkbox" id="ckEarlyMenopause"> early menopause</label><br />
+            <label for="ckEndStageRenal"><input class="ptIn" name="ckEndStageRenal" type="checkbox" id="ckEndStageRenal"> end-stage renal disease</label><br />
+            <label for="ckPFracturerPast"><input class="ptIn" name="ckPFracturerPast" type="checkbox" id="ckPFracturerPast"> fracture in the past</label><br />
+            <label for="ckPGestationalDiabetes"><input class="ptIn" name="ckPGestationalDiabetes" type="checkbox" id="ckPGestationalDiabetes"> gestational diabetes</label><br />
+            <label for="ckPGlucocorticoidTherapy"><input class="ptIn" name="ckPGlucocorticoidTherapy" type="checkbox" id="ckPGlucocorticoidTherapy"> glucocorticoid therapy</label><br />
+            <label for="ckPHemoglobinopathy"><input class="ptIn" name="ckPHemoglobinopathy" type="checkbox" id="ckPHemoglobinopathy"> hemoglobinopathies</label><br />
+            <label for="cckPHIV"><input class="ptIn" name="cckPHIV" type="checkbox" id="cckPHIV"> HIV</label><br />
+            <label for="ckPHyperlipidemia"><input class="ptIn" name="ckPHyperlipidemia" type="checkbox" id="ckPHyperlipidemia"> hyperlipidemia</label><br />
+            <label for="ckPHypertension"><input class="ptIn" name="ckPHypertension" type="checkbox" id="ckPHypertension"> hypertension</label><br />
+            <label for="ckPHypergonadism"><input class="ptIn" name="ckPHypergonadism" type="checkbox" id="ckPHypergonadism"> hypogonadism</label><br />
+            <label for="ckPImmuneocompromising"><input class="ptIn" name="ckPImmuneocompromising" type="checkbox" id="ckPImmuneocompromising"> immunocompromising conditions</label><br />
+            <label for="ckPInflammatoryBowel"><input class="ptIn" name="ckPInflammatoryBowel" type="checkbox" id="ckPInflammatoryBowel"> inflammatory bowel disease</label><br />
+            <label for="ckPMalabsorption"><input class="ptIn" name="ckPMalabsorption" type="checkbox" id="ckPMalabsorption"> malabsorption</label><br />
+            <label for="ckNegativeHPV"><input class="ptIn" name="ckNegativeHPV" type="checkbox" id="ckNegativeHPV"> negative HPV test</label><br />
+            <label for="ckPNephroticSyndrome"><input class="ptIn" name="ckPNephroticSyndrome" type="checkbox" id="ckPNephroticSyndrome"> nephrotic syndrome</label><br />
+            <label for="ckChickenPox"><input class="ptIn" name="ckChickenPox" type="checkbox" id="ckChickenPox"> no history of chicken pox</label><br />
+            <label for="ckVaricellaVaccine"><input class="ptIn" name="ckVaricellaVaccine" type="checkbox" id="ckVaricellaVaccine"> no previous varicella vaccine</label><br />
+            <label for="ckPRhumatoidArthritis"><input class="ptIn" name="ckPRhumatoidArthritis" type="checkbox" id="ckPRhumatoidArthritis"> rheumatoid arthritis</label><br />
+            <label for="ckPSickleCell"><input class="ptIn" name="ckPSickleCell" type="checkbox" id="ckPSickleCell"> sickle cell disease</label><br />
+            <label for="ckPSplenectomy"><input class="ptIn" name="ckPSplenectomy" type="checkbox" id="ckPSplenectomy"> splenectomy</label><br />
+
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4" id="right-column">
             <h2>Recommendations</h2>
             <div id="Results">
 
                 <pre id="Recommendations">
-Screen for diabetes
-Screen for prostate
+<i>None</i>
                 </pre>
             </div>
         </div>
@@ -209,7 +162,7 @@ Screen for prostate
 
     <!-- Site footer -->
     <div class="footer">
-        <p>&copy; Company 2014</p>
+        <p>Preventive Medicine Team - Bryan Bordeaux, Rich Brown, Michelle Qi, Elaine Wu - BlueButton Hackathon, January 2014</p>
     </div>
 
 </div> <!-- /container -->
@@ -227,21 +180,19 @@ Screen for prostate
 <script>
     $( document ).ready(function() {
         //$( "p" ).text( "The DOM is now loaded and can be manipulated." );
-        $(".pmIn").click(function(){UpdatePage()});
+        $(".ptIn").click(function(){UpdatePage()});
 //        UpdatePage();
 
     });
 
 
     function UpdatePage (){
-        var str= $("#Recommendations").text();
-        str += "a";
-//
-//        $(".ptIn").each(function(index){
-//
-//            str += $(this).id + "<br />";
-//        })
-        $("#Recommendations").text(str);
+        var str= "";
+
+        $(".ptIn").each(function(){
+            str = $("#Recommendations").text();
+            $("#Recommendations").text(str + "\n" + $(this).attr('id'));
+        });
     }
 
 </script>

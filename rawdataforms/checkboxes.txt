@@ -1,0 +1,55 @@
+Gender	gender
+sexually active	ckSexuallyActive
+BMI	numBmi
+postmenopausal	ckBPostMeno
+Birthplace: Africa or Asia	ckBBirthAfAs
+residents of nursing homes & long-term care facilities	ckBLtCareRes
+college student living in residence halls	ckBCollegeStudentInDorm
+occupational blood exposure	ckBWorkBloodExpo
+current cigarette smoker	ckHSmoker
+>5 drinks on occasions	ckH5gtDrink5Day
+illicit drug use	ckHBadDrugs
+injection-drug users	ckInjectionDrug
+multiple partners	ckH1gtSexPartners
+man who has sex with men	ckHSexManMan
+active less than 1 hour per week	ckHActiveHrltWeek
+FHx of abdominal aortic aneurysm	ckFHXAAA
+FHx* of DM	ckFFamilyDiabetes
+parental had a hip fracture	ckFParentHipFrac
+parent or sibling had colon cancer or polyps	ckFFamilyColCancerPolyps
+any relative with hemochromatosis	ckFRelativeHemochromatosis
+FHx of prostate cancer	ckFFatherBrotherProsCancer
+>10 years since last TDap vaccine	cktDapvaccine
+abnormal pap smear	ckPAbnormalPapSmear
+asthma	ckPAsthma
+cardiovascular disease	ckPCardioDisease
+celiac disease	ckPCeliacDisease
+chemotherapy (starting or current)	ckPChemotherapy
+chronic liver disease (incl. cirrhosis)	ckPChronicLiver
+chronic renal failure	ckPChronicRenal
+clotting factor requiring concentrates	ckPClottingFactorDefConcentrate
+cochlear implants	ckPCochlearImplants
+COPD	ckPCOPD
+CSF leaks	ckPCSFLeaks
+diabetes	ckPDiabetes
+early menopause	ckEarlyMenopause
+end-stage renal disease	ckEndStageRenal
+fracture in the past	ckPFracturerPast
+gestational diabetes	ckPGestationalDiabetes
+glucocorticoid therapy	ckPGlucocorticoidTherapy
+hemoglobinopathies	ckPHemoglobinopathy
+HIV	cckPHIV
+hyperlipidemia	ckPHyperlipidemia
+hypertension	ckPHypertension
+hypogonadism	ckPHypergonadism
+immunocompromising conditions	ckPImmuneocompromising
+inflammatory bowel disease	ckPInflammatoryBowel
+malabsorption	ckPMalabsorption
+negative HPV test	ckNegativeHPV
+nephrotic syndrome	ckPNephroticSyndrome
+no history of chicken pox	ckChickenPox
+no previous varicella vaccine	ckVaricellaVaccine
+complement deficiencies	ckPComplementDef
+rheumatoid arthritis	ckPRhumatoidArthritis
+sickle cell disease	ckPSickleCell
+splenectomy	ckPSplenectomy
