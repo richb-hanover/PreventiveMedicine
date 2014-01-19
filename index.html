@@ -57,13 +57,10 @@
             <input class="ptIn" type="text" name="numAge" id="numAge"  size=3/><br />
 
 
-            <strong>Gender </strong><label>
-                <input class="ptIn" type="radio" name="gender" value="female" id="gender" />
-                Female</label>
+            <strong>Gender </strong>
+            <label> <input class="ptIn" type="radio" name="gender" value="F" id="genderf" /> Female</label>
 
-            <label>
-                <input class="ptIn" type="radio" name="gender" value="male" id="gender" />
-                Male</label><br />
+            <label> <input class="ptIn" type="radio" name="gender" value="M" id="genderm" /> Male</label><br />
 
 
             <label for="ckBPostMeno"><input class="ptIn" name="ckBPostMeno" type="checkbox" id="ckBPostMeno"> postmenopausal</label><br />
@@ -176,11 +173,18 @@
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
-<!--<script src="js/PreventiveMedicine.js"></script>-->
+<script src="js/PreventiveMedicine.js"></script>
+<script src="js/rules-json.js"></script>
 <script>
     $( document ).ready(function() {
+
         //$( "p" ).text( "The DOM is now loaded and can be manipulated." );
-        $(".ptIn").click(function(){UpdatePage()});
+        PreventiveMedicine.init();
+
+        $(".ptIn").click(function(){
+            var str = PreventiveMedicine.GetRecommendations();
+            $("#Recommendations").html(str);
+        });
 //        UpdatePage();
 
     });

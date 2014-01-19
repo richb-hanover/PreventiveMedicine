@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Preventive Medicine Checklist</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/grid.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<br />
+<!--<div class="masthead">-->
+<!--<h3 class="text-muted">Automated Preventive Medicine Checklist</h3>-->
+<!--<ul class="nav nav-justified">-->
+<!--<li class="active"><a href="#">Home</a></li>-->
+<!--<li><a href="#">Projects</a></li>-->
+<!--<li><a href="#">Services</a></li>-->
+<!--<li><a href="#">Downloads</a></li>-->
+<!--<li><a href="#">About</a></li>-->
+<!--<li><a href="#">Contact</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+    <h1>Test JSON</h1>
+    <p class="lead">
+
+    </p>
+</div>
+
+<div class="container">
+
+    <div id="answer1">
+
+    </div>
+    <br />
+    <div id="answer2">
+BLAH!
+    </div>
+
+    <!-- Site footer -->
+    <div class="footer">
+        <p>Preventive Medicine Team - Bryan Bordeaux, Rich Brown, Michelle Qi, Elaine Wu - BlueButton Hackathon, January 2014</p>
+    </div>
+
+</div> <!-- /container -->
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<!--<script src="js/PreventiveMedicine.js"></script>-->
+<script>
+    $( document ).ready(function() {
+        //$( "p" ).text( "The DOM is now loaded and can be manipulated." );
+        $(".ptIn").click(function(){UpdatePage()});
+//        UpdatePage();
+        testjson();
+
+    });
+
+
+    function UpdatePage (){
+        var str= "";
+
+        $(".ptIn").each(function(){
+            str = $("#Recommendations").text();
+            $("#Recommendations").text(str + "\n" + $(this).attr('id'));
+        });
+    }
+
+    function testjson(){
+
+        var myJSONObject = {"bindings": [
+            {"ircEvent": "PRIVMSG", "method": "newURI", "regex": "^http://.*"},
+            {"ircEvent": "PRIVMSG", "method": "deleteURI", "regex": "^delete.*"},
+            {"ircEvent": "PRIVMSG", "method": "randomURI", "regex": "^random.*"}
+        ]
+        };
+
+        $("#answer1").text(myJSONObject.bindings[0].method);
+        // alert(myJSONObject.length);
+
+        var str = "";
+        for (i=0; i < myJSONObject.bindings.length; i++) {
+            for (key in myJSONObject.bindings[i]) {
+
+                str = $("#answer2").html();
+                str += myJSONObject.bindings[i][key];
+                $("#answer2").html(str + "<br />");
+            };
+        };
+    }
+
+</script>
+
+</body>
+</html>
