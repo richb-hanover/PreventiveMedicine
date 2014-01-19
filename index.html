@@ -33,14 +33,14 @@
 
     <div class="masthead">
         <h3 class="text-muted">Automated Preventive Medicine Checklist</h3>
-        <ul class="nav nav-justified">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Downloads</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+        <!--<ul class="nav nav-justified">-->
+            <!--<li class="active"><a href="#">Home</a></li>-->
+            <!--<li><a href="#">Projects</a></li>-->
+            <!--<li><a href="#">Services</a></li>-->
+            <!--<li><a href="#">Downloads</a></li>-->
+            <!--<li><a href="#">About</a></li>-->
+            <!--<li><a href="#">Contact</a></li>-->
+        <!--</ul>-->
     </div>
 
     <!-- Jumbotron -->
@@ -55,63 +55,78 @@
             <h1>The Basics</h1>
             <p>
                 <label for="numAge">Age</label>
-                <input type="text" name="numAge" id="numAge"  size=3/>
+                <input type="text" name="numAge" id="numAge"  size=3 class="pmIn"/>
             </p>
             <p>
                 <label>
-                    <input type="radio" name="gender" value="female" id="gender" />
+                    <input type="radio" name="gender" value="female" id="gender" class="pmIn"/>
                     Female</label>
 
                 <label>
-                    <input type="radio" name="gender" value="male" id="gender" />
+                    <input type="radio" name="gender" value="male" id="gender" class="pmIn"/>
                     Male</label>
             </p>
             <p>
-                <input type="checkbox" name="ckPostMeno" id="ckPostMeno" />
+                <input type="checkbox" name="ckPostMeno" id="ckPostMeno" class="pmIn"/>
                 <label for="ckPostMeno">Postmenopausal</label>
             </p>
             <p>
                 <label for="numHeightIn">Height</label>
                 <input type="text" name="numHeightIn" id="numHeightIn" size = 5
-                        />
+                       class="pmIn"/>
                 inches</p>
             <p>
                 <label for="numWeightLb">Weight</label>
-                <input type="text" name="numWeightLb" id="numWeightLb"  size=5/>
+                <input type="text" name="numWeightLb" id="numWeightLb"  size=5 class="pmIn"/>
                 pounds</p>
             <p style="color:gray">
             <label for="numBmi">BMI</label>
-            <input type="text" name="numBmi" id="numBmi" readonly="readonly" size="3"/>
+            <input type="text" name="numBmi" id="numBmi" readonly="readonly" size="3" class="pmIn"/>
             </p>
             <p>
-                <input type="checkbox" name="ckBirthLoc" id="ckBirthLoc" />
+                <input type="checkbox" name="ckBirthLoc" id="ckBirthLoc" class="pmIn"/>
                 <label for="ckBirthLoc">Born in Africa or Asia</label>
             </p>
             <p>
-                <input type="checkbox" name="ckWorkBloodExpo" id="ckWorkBloodExpo" />
+                <input type="checkbox" name="ckWorkBloodExpo" id="ckWorkBloodExpo"class="pmIn" />
                 <label for="ckWorkBloodExpo">Exposed to blood at work</label>
             </p>
             <p>
-                <input type="checkbox" name="ckLtCareRes" id="ckLtCareRes" />
+                <input type="checkbox" name="ckLtCareRes" id="ckLtCareRes" class="pmIn"/>
                 <label for="ckLtCareRes">Long term care resident</label>
             </p>
             <p>
-                <input type="checkbox" name="ckCollegeStudentInDorm" id="ckCollegeStudentInDorm" />
+                <input type="checkbox" name="ckCollegeStudentInDorm" id="ckCollegeStudentInDorm" class="pmIn"/>
                 <label for="ckCollegeStudentInDorm">College student living in dorm</label>
             </p>
         </div>
         <div class="col-lg-4">
-            <h2>More indications</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+            <h2>Personal Medical History</h2>
+            <p>
+            <input type="checkbox" name="ckBirthLoc" id="ckBirthLoc" class="pmIn"/>
+            <label for="ckBirthLoc">Born in Africa or Asia</label>
+            </p>
+            <p>
+                <input type="checkbox" name="ckWorkBloodExpo" id="ckWorkBloodExpo"class="pmIn" />
+                <label for="ckWorkBloodExpo">Exposed to blood at work</label>
+            </p>
+            <p>
+                <input type="checkbox" name="ckLtCareRes" id="ckLtCareRes" class="pmIn"/>
+                <label for="ckLtCareRes">Long term care resident</label>
+            </p>
+            <p>
+                <input type="checkbox" name="ckCollegeStudentInDorm" id="ckCollegeStudentInDorm" class="pmIn"/>
+                <label for="ckCollegeStudentInDorm">College student living in dorm</label>
+            </p>
         </div>
         <div class="col-lg-4">
             <h2>Recommendations</h2>
             <div id="Results">
-                Hi Rich!
-                <div id="Recommendations">
 
-                </div>
+                <pre id="Recommendations">
+Screen for diabetes
+Screen for prostate
+                </pre>
             </div>
         </div>
     </div>
@@ -135,8 +150,15 @@
 <script src="js/PreventiveMedicine.js"></script>
 <script>
     $( document ).ready(function() {
-        $( "p" ).text( "The DOM is now loaded and can be manipulated." );
+        //$( "p" ).text( "The DOM is now loaded and can be manipulated." );
+        $(".pmIn").click(function(){UpdatePage()});
+//        UpdatePage();
+
     });
+    function UpdatePage (){
+        var str= $("#Recommendations").text();
+        $("#Recommendations").text(str + "a");
+    }
 </script>
 
 </body>
