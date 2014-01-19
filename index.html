@@ -54,21 +54,21 @@
         <div class="col-lg-4" id="left-column">
             <h2>The Basics</h2>
 
-            <label for="numAge">Age</label><br />
+            <label for="numAge">Age </label>
             <input class="ptIn" type="text" name="numAge" id="numAge"  size=3/><br />
 
 
-            <label>
+            <strong>Gender </strong><label>
                 <input class="ptIn" type="radio" name="gender" value="female" id="gender" />
-                Female</label><br />
+                Female</label>
 
             <label>
                 <input class="ptIn" type="radio" name="gender" value="male" id="gender" />
                 Male</label><br />
 
 
-            <input class="ptIn" type="checkbox" name="ckBPostMeno" id="ckBPostMeno" />
-            <label for="ckBPostMeno">Postmenopausal</label><br />
+            <label for="ckBPostMeno"><input class="ptIn" name="ckBPostMeno" type="checkbox" id="ckBPostMeno"> postmenopausal</label><br />
+
 
 
             <label for="numHeightIn">Height</label>
@@ -82,30 +82,14 @@
 
             <label for="numBmi">BMI</label>
             <input class="ptIn" type="text" name="numBmi" id="numBmi" readonly="readonly" size="3"/><br />
-
-
-            <input class="ptIn" type="checkbox" name="ckBBirthLoc" id="ckBBirthLoc" />
-            <label for="ckBBirthLoc">Born in Africa or Asia</label><br />
-
-
-            <input class="ptIn" type="checkbox" name="ckBWorkBloodExpo" id="ckBWorkBloodExpo" />
-            <label for="ckBWorkBloodExpo">Exposed to blood at work</label><br />
-
-
-            <input class="ptIn" type="checkbox" name="ckBLtCareRes" id="ckBLtCareRes" />
-            <label for="ckBLtCareRes">Long term care resident</label><br />
-
-
-            <input class="ptIn" type="checkbox" name="ckBCollegeStudentInDorm" id="ckBCollegeStudentInDorm" />
-            <label for="ckBCollegeStudentInDorm">College student living in dorm</label><br />
-            <label for="gender"><input class="ptIn" name="gender" type="checkbox" id="gender"> Gender</label><br />
-            <label for="ckSexuallyActive"><input class="ptIn" name="ckSexuallyActive" type="checkbox" id="ckSexuallyActive"> sexually active</label><br />
-            <label for="numBmi"><input class="ptIn" name="numBmi" type="checkbox" id="numBmi"> BMI</label><br />
-            <label for="ckBPostMeno"><input class="ptIn" name="ckBPostMeno" type="checkbox" id="ckBPostMeno"> postmenopausal</label><br />
             <label for="ckBBirthAfAs"><input class="ptIn" name="ckBBirthAfAs" type="checkbox" id="ckBBirthAfAs"> Birthplace: Africa or Asia</label><br />
-            <label for="ckBLtCareRes"><input class="ptIn" name="ckBLtCareRes" type="checkbox" id="ckBLtCareRes"> residents of nursing homes & long-term care facilities</label><br />
-            <label for="ckBCollegeStudentInDorm"><input class="ptIn" name="ckBCollegeStudentInDorm" type="checkbox" id="ckBCollegeStudentInDorm"> college student living in residence halls</label><br />
             <label for="ckBWorkBloodExpo"><input class="ptIn" name="ckBWorkBloodExpo" type="checkbox" id="ckBWorkBloodExpo"> occupational blood exposure</label><br />
+            <label for="ckBLtCareRes"><input class="ptIn" name="ckBLtCareRes" type="checkbox" id="ckBLtCareRes"> long-term care resident</label><br />
+            <label for="ckBCollegeStudentInDorm"><input class="ptIn" name="ckBCollegeStudentInDorm" type="checkbox" id="ckBCollegeStudentInDorm"> college student living in residence halls</label><br />
+
+            <!--<label for="gender"><input class="ptIn" name="gender" type="checkbox" id="gender"> Gender</label><br />-->
+            <label for="ckSexuallyActive"><input class="ptIn" name="ckSexuallyActive" type="checkbox" id="ckSexuallyActive"> sexually active</label><br />
+            <!--<label for="numBmi"><input class="ptIn" name="numBmi" type="checkbox" id="numBmi"> BMI</label><br />-->
             <h3>Health Habits</h3>
             <label for="ckHSmoker"><input class="ptIn" name="ckHSmoker" type="checkbox" id="ckHSmoker"> current cigarette smoker</label><br />
             <label for="ckH5gtDrink5Day"><input class="ptIn" name="ckH5gtDrink5Day" type="checkbox" id="ckH5gtDrink5Day"> >5 drinks on occasions</label><br />
@@ -174,7 +158,7 @@ Screen for prostate
 
     <!-- Site footer -->
     <div class="footer">
-        <p>&copy; Preventive Medicine Team - BlueButton Hackathon, January 2014</p>
+        <p>Preventive Medicine Team - Bryan Bordeaux, Rich Brown, Michelle Qi, Elaine Wu - BlueButton Hackathon, January 2014</p>
     </div>
 
 </div> <!-- /container -->
@@ -188,11 +172,11 @@ Screen for prostate
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
-<script src="js/PreventiveMedicine.js"></script>
+<!--<script src="js/PreventiveMedicine.js"></script>-->
 <script>
     $( document ).ready(function() {
         //$( "p" ).text( "The DOM is now loaded and can be manipulated." );
-        $(".pmIn").click(function(){UpdatePage()});
+        $(".ptIn").click(function(){UpdatePage()});
 //        UpdatePage();
 
     });
