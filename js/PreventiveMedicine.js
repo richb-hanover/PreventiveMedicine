@@ -18,7 +18,8 @@ var PreventiveMedicine = (function ($) {
 
     var curURL = "",
         curRec = "",
-        curRecType = "";
+        curRecType = "",
+        RecTypeList = "";                   // list of the RecTypes we've already output
 
 //    function privateMethod() {
 //        // ...
@@ -34,9 +35,10 @@ var PreventiveMedicine = (function ($) {
 
         for (i = 0; i < globalrulesobject.rules.length; i++)    {
             x = globalrulesobject.rules[i];
-            str = ProcessRule(x);
-            if (str != "") {
-                retstr += i.toString()+str;
+            str = ProcessRule(x, i);
+            if (str != "") { // look for a recommendation to output, and also suppress duplicates
+                retstr += str;
+                RecTypeList += " " + curRecType;
             }
         }
 
@@ -46,7 +48,7 @@ var PreventiveMedicine = (function ($) {
 // Process a single rule to see what recommendations we might make
 // Always retain Recommendation, URL, and RecType and process all the non-empty keys.
 
-    function ProcessRule(theRule) {
+    function ProcessRule(theRule, itsIndex) {
 
         var n_val = 0;
         var k = "";             // the rule's key
@@ -57,6 +59,7 @@ var PreventiveMedicine = (function ($) {
         for (key in theRule) {
             k = key;
             v = theRule[key];
+//            if (k.indexOf("FIELD38") == 0) { return "" }
             if (k.indexOf("FIELD") == 0) { continue; }
             if (v == null || v == "") { continue; }
             if (k == "ckPGestationalDiabetes")  {
@@ -97,8 +100,11 @@ var PreventiveMedicine = (function ($) {
                 if (v != f)   { return "" }
                 sawMatch = true;
                 continue;
+            } else if (key == 'ckH5gtDrink5Day') {  // TOTAL CROCK FOR THE DEMO - 19Jan2014 -reb
+                return "";
+
             } else {
-                f = $("#"+key).is(':checked');
+                f = $("#"+key).is(':checked');      // check all the other checkboxes
                 if (f) {
                     sawMatch = true;
                     continue;
@@ -112,7 +118,9 @@ var PreventiveMedicine = (function ($) {
         }
         if (sawMatch)   {
             // Went through all columns without a failure so this is a match
-            return  curRec + "<small><a href='" + URL + "'> More</a></small><br />";
+//            return  curRec + " (" + itsIndex.toString()+ ") <small><a href='" + URL + "'> More</a></small><br />";
+            return  curRec + " <small><a href='" + URL + "'> More</a></small><br />";
+
         } else {
             return "";
         }
