@@ -25,25 +25,34 @@ var PreventiveMedicine = (function ($) {
 //    };
 
 // Process Rules - scan each of the rules from the globalrulesobject examining the various columns.
-// Always retain Recommendation, URL, and RecType and process all the non-empty keys.
-
-
 
     function ProcessRules() {
-        var x = globalrulesobject.rules[0]; // do the first one...
-        retstr = "";
-        retstr += ProcessRule(x);
+
+        var retstr = "";
+        var x;
+        for (i = 0; i < globalrulesobject.rules.length; i++)    {
+            x = globalrulesobject.rules[i];
+            retstr += i.toString()+ProcessRule(x);
+        }
+
         return retstr;
     }
 
 // Process a single rule to see what recommendations we might make
+// Always retain Recommendation, URL, and RecType and process all the non-empty keys.
+
     function ProcessRule(theRule) {
 
         var n_val = 0;
-        var j = "";
+        var k = "";
+        var v = "";
+        var g = "";
 
         for (key in theRule) {
-            j = key;
+            k = key;
+            v = theRule[key];
+            if (v == null || v == "") { continue; }
+
             if (key == "Recommendation") {
                 curRec = theRule[key];
                 continue;
@@ -72,17 +81,18 @@ var PreventiveMedicine = (function ($) {
                     if (n_bmi > n_val) { return "" }
                     continue;
                 } else if (key == "gender") {
-                    if (theRule[key] != $("input[name=gender]:checked").val())   { return "" }
+                    g = $("input[name=gender]:checked").val();
+                    if (theRule[key] != g)   { return "" }
                     continue;
                 }
 
+
+
+
             }
-
-
-
         }
-        // Went through all columns without a failure
-        return  curRec + "<a href='" + URL + "'> More</a><br />";
+        // Went through all columns without a failure so this is a match
+        return  curRec + "<small><a href='" + URL + "'> More</a></small><br />";
     }
 
     my.init= function(){
