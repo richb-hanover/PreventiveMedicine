@@ -30,9 +30,14 @@ var PreventiveMedicine = (function ($) {
 
         var retstr = "";
         var x;
+        var str;
+
         for (i = 0; i < globalrulesobject.rules.length; i++)    {
             x = globalrulesobject.rules[i];
-            retstr += i.toString()+ProcessRule(x);
+            str = ProcessRule(x);
+            if (str != "") {
+                retstr += i.toString()+str;
+            }
         }
 
         return retstr;
@@ -44,52 +49,55 @@ var PreventiveMedicine = (function ($) {
     function ProcessRule(theRule) {
 
         var n_val = 0;
-        var k = "";
-        var v = "";
-        var g = "";
+        var k = "";             // the rule's key
+        var v = "";             // that rule key's value
+        var f = "";             // value of that key's Field on the Form
 
         for (key in theRule) {
             k = key;
             v = theRule[key];
             if (v == null || v == "") { continue; }
+            if (v == "ckH1gtSexPartners") break;
 
             if (key == "Recommendation") {
-                curRec = theRule[key];
+                curRec = v;
                 continue;
             }
             else if (key == "URL")  {
-                curURL = theRule[key];
+                curURL = v;
                 continue;
             }
             else if (key == "RecType")  {
-                curRecType = theRule[key];
+                curRecType = v;
                 continue;
             }
 
-            // look for non-null/non-empty fields
-            if (theRule[key] != null && theRule[key] != "") {
-                if (key == "numMinAge") {
-                    n_val = parseFloat(theRule[key]);
-                    if (age < n_val) { return "" }
-                    continue;
-                } else if (key == "numMaxAge") {
-                    n_val = parseFloat(theRule[key]);
-                    if (age > n_val) { return "" }
-                    continue;
-                } else if (key == "numBmi") {
-                    n_val = parseFloat(theRule[key]);
-                    if (n_bmi > n_val) { return "" }
-                    continue;
-                } else if (key == "gender") {
-                    g = $("input[name=gender]:checked").val();
-                    if (theRule[key] != g)   { return "" }
-                    continue;
-                }
-
-
-
-
+            // look through the remainder of the columns for non-null/non-empty fields
+            if (key == "numMinAge") {
+                n_val = parseFloat(v);
+                if (isNaN(n_val) || age < n_val) { return "" }
+                continue;
+            } else if (key == "numMaxAge") {
+                n_val = parseFloat(v);
+                if (isNaN(n_val) || age > n_val) { return "" }
+                continue;
+            } else if (key == "numBmi") {
+                n_val = parseFloat(v);
+                if (isNaN(n_bmi) || n_bmi > n_val) { return "" }
+                continue;
+            } else if (key == "gender") {
+                f = $("input[name=gender]:checked").val();
+                if (v != f)   { return "" }
+                continue;
+            } else {
+                f = $("#"+key).val();
+                if (f == null || f == "") { return "" }
+                continue;
             }
+
+
+
+
         }
         // Went through all columns without a failure so this is a match
         return  curRec + "<small><a href='" + URL + "'> More</a></small><br />";
