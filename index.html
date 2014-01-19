@@ -30,9 +30,9 @@
 
 <body>
 <div class="container">
-
-    <div class="masthead">
-        <h3 class="text-muted">Automated Preventive Medicine Checklist</h3>
+<br />
+    <!--<div class="masthead">-->
+        <!--<h3 class="text-muted">Automated Preventive Medicine Checklist</h3>-->
         <!--<ul class="nav nav-justified">-->
             <!--<li class="active"><a href="#">Home</a></li>-->
             <!--<li><a href="#">Projects</a></li>-->
@@ -41,7 +41,7 @@
             <!--<li><a href="#">About</a></li>-->
             <!--<li><a href="#">Contact</a></li>-->
         <!--</ul>-->
-    </div>
+    <!--</div>-->
 
     <!-- Jumbotron -->
     <div class="jumbotron">
@@ -98,82 +98,66 @@
 
             <input class="ptIn" type="checkbox" name="ckBCollegeStudentInDorm" id="ckBCollegeStudentInDorm" />
             <label for="ckBCollegeStudentInDorm">College student living in dorm</label><br />
+            <label for="gender"><input class="ptIn" name="gender" type="checkbox" id="gender"> Gender</label><br />
+            <label for="ckSexuallyActive"><input class="ptIn" name="ckSexuallyActive" type="checkbox" id="ckSexuallyActive"> sexually active</label><br />
+            <label for="numBmi"><input class="ptIn" name="numBmi" type="checkbox" id="numBmi"> BMI</label><br />
+            <label for="ckBPostMeno"><input class="ptIn" name="ckBPostMeno" type="checkbox" id="ckBPostMeno"> postmenopausal</label><br />
+            <label for="ckBBirthAfAs"><input class="ptIn" name="ckBBirthAfAs" type="checkbox" id="ckBBirthAfAs"> Birthplace: Africa or Asia</label><br />
+            <label for="ckBLtCareRes"><input class="ptIn" name="ckBLtCareRes" type="checkbox" id="ckBLtCareRes"> residents of nursing homes & long-term care facilities</label><br />
+            <label for="ckBCollegeStudentInDorm"><input class="ptIn" name="ckBCollegeStudentInDorm" type="checkbox" id="ckBCollegeStudentInDorm"> college student living in residence halls</label><br />
+            <label for="ckBWorkBloodExpo"><input class="ptIn" name="ckBWorkBloodExpo" type="checkbox" id="ckBWorkBloodExpo"> occupational blood exposure</label><br />
+            <h3>Health Habits</h3>
+            <label for="ckHSmoker"><input class="ptIn" name="ckHSmoker" type="checkbox" id="ckHSmoker"> current cigarette smoker</label><br />
+            <label for="ckH5gtDrink5Day"><input class="ptIn" name="ckH5gtDrink5Day" type="checkbox" id="ckH5gtDrink5Day"> >5 drinks on occasions</label><br />
+            <label for="ckHBadDrugs"><input class="ptIn" name="ckHBadDrugs" type="checkbox" id="ckHBadDrugs"> illicit drug use</label><br />
+            <label for="ckInjectionDrug"><input class="ptIn" name="ckInjectionDrug" type="checkbox" id="ckInjectionDrug"> injection-drug users</label><br />
+            <label for="ckH1gtSexPartners"><input class="ptIn" name="ckH1gtSexPartners" type="checkbox" id="ckH1gtSexPartners"> multiple partners</label><br />
+            <label for="ckHSexManMan"><input class="ptIn" name="ckHSexManMan" type="checkbox" id="ckHSexManMan"> man who has sex with men</label><br />
+            <label for="ckHActiveHrltWeek"><input class="ptIn" name="ckHActiveHrltWeek" type="checkbox" id="ckHActiveHrltWeek"> active less than 1 hour per week</label><br />
+
+            <h3>Family History</h3>
+            <label for="ckFHXAAA"><input class="ptIn" name="ckFHXAAA" type="checkbox" id="ckFHXAAA"> FHx of abdominal aortic aneurysm</label><br />
+            <label for="ckFFamilyDiabetes"><input class="ptIn" name="ckFFamilyDiabetes" type="checkbox" id="ckFFamilyDiabetes"> FHx* of DM</label><br />
+            <label for="ckFParentHipFrac"><input class="ptIn" name="ckFParentHipFrac" type="checkbox" id="ckFParentHipFrac"> parental had a hip fracture</label><br />
+            <label for="ckFFamilyColCancerPolyps"><input class="ptIn" name="ckFFamilyColCancerPolyps" type="checkbox" id="ckFFamilyColCancerPolyps"> parent or sibling had colon cancer or polyps</label><br />
+            <label for="ckFRelativeHemochromatosis"><input class="ptIn" name="ckFRelativeHemochromatosis" type="checkbox" id="ckFRelativeHemochromatosis"> any relative with hemochromatosis</label><br />
+            <label for="ckFFatherBrotherProsCancer"><input class="ptIn" name="ckFFatherBrotherProsCancer" type="checkbox" id="ckFFatherBrotherProsCancer"> FHx of prostate cancer</label><br />
         </div>
         <div class="col-lg-4" id="middle-column">
             <h2>Personal Medical History  </h2>
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPAbnormalPapSmear" value="ckPAbnormalPapSmear" id="ckPAbnormalPapSmear" />    abnormal pap smear
-            </label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPAsthma" value="ckPAsthma" id="ckPAsthma" />
-                asthma</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPCardioDisease" value="ckPCardioDisease" id="ckPCardioDisease" /> cardiovascular disease
-            </label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPCeliacDisease" value="ckPCeliacDisease" id="ckPCeliacDisease" />
-                celiac disease</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPChemotherapy" value="ckPChemotherapy" id="ckPChemotherapy" />
-                chemotherapy (starting or current)</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPChronicLiver" value="ckPChronicLiver" id="ckPChronicLiver" />
-                chronic liver disease</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPChronicRenal" value="ckPChronicRenal" id="ckPChronicRenal" />
-                chronic renal failure</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPClottingFactorDefConcentrate" value="ckPClottingFactorDefConcentrate" id="ckPClottingFactorDefConcentrate" />
-                clotting factor deficiency requiring concentrates</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPCochlearImplants" value="ckPCochlearImplants" id="ckPCochlearImplants" />
-                cochlear implants</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPComplementDef" value="ckPComplementDef" id="ckPComplementDef" />
-                complement deficiency</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPCOPD" value="ckPCOPD" id="ckPCOPD" />
-                COPD</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPCSFLeaks" value="ckPCSFLeaks" id="ckPCSFLeaks" />
-                CSF leaks</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPDiabetes" value="ckPDiabetes" id="ckPDiabetes" />
-                diabetes</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPFracturePast" value="ckPFracturePast" id="ckPFracturerPast" />
-                fracture in the past</label><br />
-
-
-            <label>
-                <input class="ptIn" type="checkbox" name="ckPHemoglobinopathy" value="ckPHemoglobinopathy" id="ckPHemoglobinopathy" />
-                hemoglobinopathy</label><br />
+            <label for="ckPAbnormalPapSmear"><input class="ptIn" name="ckPAbnormalPapSmear" type="checkbox" id="ckPAbnormalPapSmear"> abnormal pap smear</label><br />
+            <label for="ckPAsthma"><input class="ptIn" name="ckPAsthma" type="checkbox" id="ckPAsthma"> asthma</label><br />
+            <label for="ckPCardioDisease"><input class="ptIn" name="ckPCardioDisease" type="checkbox" id="ckPCardioDisease"> cardiovascular disease</label><br />
+            <label for="ckPCeliacDisease"><input class="ptIn" name="ckPCeliacDisease" type="checkbox" id="ckPCeliacDisease"> celiac disease</label><br />
+            <label for="ckPChemotherapy"><input class="ptIn" name="ckPChemotherapy" type="checkbox" id="ckPChemotherapy"> chemotherapy (starting or current)</label><br />
+            <label for="ckPChronicLiver"><input class="ptIn" name="ckPChronicLiver" type="checkbox" id="ckPChronicLiver"> chronic liver disease (incl. cirrhosis)</label><br />
+            <label for="ckPChronicRenal"><input class="ptIn" name="ckPChronicRenal" type="checkbox" id="ckPChronicRenal"> chronic renal failure</label><br />
+            <label for="ckPClottingFactorDefConcentrate"><input class="ptIn" name="ckPClottingFactorDefConcentrate" type="checkbox" id="ckPClottingFactorDefConcentrate"> clotting factor requiring concentrates</label><br />
+            <label for="ckPCochlearImplants"><input class="ptIn" name="ckPCochlearImplants" type="checkbox" id="ckPCochlearImplants"> cochlear implants</label><br />
+            <label for="ckPComplementDef"><input class="ptIn" name="ckPComplementDef" type="checkbox" id="ckPComplementDef"> complement deficiencies</label><br />
+            <label for="ckPCOPD"><input class="ptIn" name="ckPCOPD" type="checkbox" id="ckPCOPD"> COPD</label><br />
+            <label for="ckPCSFLeaks"><input class="ptIn" name="ckPCSFLeaks" type="checkbox" id="ckPCSFLeaks"> CSF leaks</label><br />
+            <label for="ckPDiabetes"><input class="ptIn" name="ckPDiabetes" type="checkbox" id="ckPDiabetes"> diabetes</label><br />
+            <label for="ckEarlyMenopause"><input class="ptIn" name="ckEarlyMenopause" type="checkbox" id="ckEarlyMenopause"> early menopause</label><br />
+            <label for="ckEndStageRenal"><input class="ptIn" name="ckEndStageRenal" type="checkbox" id="ckEndStageRenal"> end-stage renal disease</label><br />
+            <label for="ckPFracturerPast"><input class="ptIn" name="ckPFracturerPast" type="checkbox" id="ckPFracturerPast"> fracture in the past</label><br />
+            <label for="ckPGestationalDiabetes"><input class="ptIn" name="ckPGestationalDiabetes" type="checkbox" id="ckPGestationalDiabetes"> gestational diabetes</label><br />
+            <label for="ckPGlucocorticoidTherapy"><input class="ptIn" name="ckPGlucocorticoidTherapy" type="checkbox" id="ckPGlucocorticoidTherapy"> glucocorticoid therapy</label><br />
+            <label for="ckPHemoglobinopathy"><input class="ptIn" name="ckPHemoglobinopathy" type="checkbox" id="ckPHemoglobinopathy"> hemoglobinopathies</label><br />
+            <label for="cckPHIV"><input class="ptIn" name="cckPHIV" type="checkbox" id="cckPHIV"> HIV</label><br />
+            <label for="ckPHyperlipidemia"><input class="ptIn" name="ckPHyperlipidemia" type="checkbox" id="ckPHyperlipidemia"> hyperlipidemia</label><br />
+            <label for="ckPHypertension"><input class="ptIn" name="ckPHypertension" type="checkbox" id="ckPHypertension"> hypertension</label><br />
+            <label for="ckPHypergonadism"><input class="ptIn" name="ckPHypergonadism" type="checkbox" id="ckPHypergonadism"> hypogonadism</label><br />
+            <label for="ckPImmuneocompromising"><input class="ptIn" name="ckPImmuneocompromising" type="checkbox" id="ckPImmuneocompromising"> immunocompromising conditions</label><br />
+            <label for="ckPInflammatoryBowel"><input class="ptIn" name="ckPInflammatoryBowel" type="checkbox" id="ckPInflammatoryBowel"> inflammatory bowel disease</label><br />
+            <label for="ckPMalabsorption"><input class="ptIn" name="ckPMalabsorption" type="checkbox" id="ckPMalabsorption"> malabsorption</label><br />
+            <label for="ckNegativeHPV"><input class="ptIn" name="ckNegativeHPV" type="checkbox" id="ckNegativeHPV"> negative HPV test</label><br />
+            <label for="ckPNephroticSyndrome"><input class="ptIn" name="ckPNephroticSyndrome" type="checkbox" id="ckPNephroticSyndrome"> nephrotic syndrome</label><br />
+            <label for="ckChickenPox"><input class="ptIn" name="ckChickenPox" type="checkbox" id="ckChickenPox"> no history of chicken pox</label><br />
+            <label for="ckVaricellaVaccine"><input class="ptIn" name="ckVaricellaVaccine" type="checkbox" id="ckVaricellaVaccine"> no previous varicella vaccine</label><br />
+            <label for="ckPRhumatoidArthritis"><input class="ptIn" name="ckPRhumatoidArthritis" type="checkbox" id="ckPRhumatoidArthritis"> rheumatoid arthritis</label><br />
+            <label for="ckPSickleCell"><input class="ptIn" name="ckPSickleCell" type="checkbox" id="ckPSickleCell"> sickle cell disease</label><br />
+            <label for="ckPSplenectomy"><input class="ptIn" name="ckPSplenectomy" type="checkbox" id="ckPSplenectomy"> splenectomy</label><br />
 
         </div>
         <div class="col-lg-4" id="right-column">
