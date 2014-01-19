@@ -10,7 +10,7 @@ var globalrulesobject = { "rules":
             "Recommendation":"Screen for chlamydia",
             "URL":"http://www.uspreventiveservicestaskforce.org/uspstf/uspschlm.htm",
             "RecType":"Chlamydia",
-            "numMinAge":24,
+            "numMinAge":0,
             "numMaxAge":24,
             "gender":"F",
             "ckSexuallyActive":"x",
