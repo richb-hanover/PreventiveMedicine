@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>Automated Preventive Medicine Checklist</title>
+    <title>Preventive Medicine Checklist</title>
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 
@@ -29,7 +29,6 @@
 </head>
 
 <body>
-<div class="container">
 <br />
     <!--<div class="masthead">-->
         <!--<h3 class="text-muted">Automated Preventive Medicine Checklist</h3>-->
@@ -47,10 +46,11 @@
     <div class="jumbotron">
         <h1>Preventive Medicine Checklist</h1>
         <p class="lead">
-            THIS IS THE PLACE TO SAY SOMETHING COOL. Motivation for the project, etc.
+            THIS IS THE PLACE TO SAY SOMETHING COOL. Motivation and goals for the project, etc.
         </p>
     </div>
 
+<div class="container">
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-lg-4" id="left-column">
@@ -93,6 +93,13 @@
             <!--<label for="numBmi"><input class="ptIn" name="numBmi" type="checkbox" id="numBmi"> BMI</label><br />-->
             <h3>Health Habits</h3>
             <label for="ckHSmoker"><input class="ptIn" name="ckHSmoker" type="checkbox" id="ckHSmoker"> current cigarette smoker</label><br />
+
+
+            <label for="numPacks"><input class="ptIn" type="text" name="numPacks" id="numPacks"  size=3/> packs per day for </label>
+            <label for="numSmokeYears"><input class="ptIn" type="text" name="numSmokeYears" id="numSmokeYears"  size=3/> years</label> <br />
+            <label for="numQuitInYear">Quit in <input class="ptIn" type="text" name="numQuitInYear" id="numQuitInYear"  size=3/></label> <br />
+            <label for="numDrinksPerWk"><input class="ptIn" type="text" name="numDrinksPerWk" id="numDrinksPerWk"  size=3/> drinks per week</label> <br />
+
             <label for="ckH5gtDrink5Day"><input class="ptIn" name="ckH5gtDrink5Day" type="checkbox" id="ckH5gtDrink5Day"> >5 drinks on occasions</label><br />
             <label for="ckHBadDrugs"><input class="ptIn" name="ckHBadDrugs" type="checkbox" id="ckHBadDrugs"> illicit drug use</label><br />
             <label for="ckInjectionDrug"><input class="ptIn" name="ckInjectionDrug" type="checkbox" id="ckInjectionDrug"> injection-drug users</label><br />
@@ -150,8 +157,7 @@
             <div id="Results">
 
                 <pre id="Recommendations">
-Screen for diabetes
-Screen for prostate
+<i>None</i>
                 </pre>
             </div>
         </div>
