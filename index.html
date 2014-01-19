@@ -54,7 +54,7 @@
             <h2>The Basics</h2>
 
             <label for="numAge">Age </label>
-            <input class="ptIn" type="text" name="numAge" id="numAge"  size=3/><br />
+            <input class="ptNum" type="text" name="numAge" id="numAge"  size=3/><br />
 
 
             <strong>Gender </strong>
@@ -67,11 +67,11 @@
 
 
             <label for="numHeightIn">Height</label>
-            <input class="ptIn" type="text" name="numHeightIn" id="numHeightIn" size = 5/>
+            <input class="ptNum" type="text" name="numHeightIn" id="numHeightIn" size = 5/>
             inches<br />
 
             <label for="numWeightLb">Weight</label>
-            <input class="ptIn" type="text" name="numWeightLb" id="numWeightLb"  size=5/>
+            <input class="ptNum" type="text" name="numWeightLb" id="numWeightLb"  size=5/>
             pounds<br />
 
 
@@ -89,10 +89,10 @@
             <label for="ckHSmoker"><input class="ptIn" name="ckHSmoker" type="checkbox" id="ckHSmoker"> current cigarette smoker</label><br />
 
 
-            <label for="numPacks"><input class="ptIn" type="text" name="numPacks" id="numPacks"  size=3/> packs per day for </label>
-            <label for="numSmokeYears"><input class="ptIn" type="text" name="numSmokeYears" id="numSmokeYears"  size=3/> years</label> <br />
-            <label for="numQuitInYear">Quit in <input class="ptIn" type="text" name="numQuitInYear" id="numQuitInYear"  size=3/></label> <br />
-            <label for="numDrinksPerWk"><input class="ptIn" type="text" name="numDrinksPerWk" id="numDrinksPerWk"  size=3/> drinks per week</label> <br />
+            <label for="numPacks"><input class="ptNum" type="text" name="numPacks" id="numPacks"  size=3/> packs per day for </label>
+            <label for="numSmokeYears"><input class="ptNum" type="text" name="numSmokeYears" id="numSmokeYears"  size=3/> years</label> <br />
+            <label for="numQuitInYear">Quit in <input class="ptNumn" type="text" name="numQuitInYear" id="numQuitInYear"  size=3/></label> <br />
+            <label for="numDrinksPerWk"><input class="ptNum" type="text" name="numDrinksPerWk" id="numDrinksPerWk"  size=3/> drinks per week</label> <br />
 
             <label for="ckH5gtDrink5Day"><input class="ptIn" name="ckH5gtDrink5Day" type="checkbox" id="ckH5gtDrink5Day"> >5 drinks on occasions</label><br />
             <label for="ckHBadDrugs"><input class="ptIn" name="ckHBadDrugs" type="checkbox" id="ckHBadDrugs"> illicit drug use</label><br />
@@ -185,7 +185,10 @@
             var str = PreventiveMedicine.GetRecommendations();
             $("#Recommendations").html(str);
         });
-//        UpdatePage();
+        $(".ptNum").blur(function(){
+            var str = PreventiveMedicine.GetRecommendations();
+            $("#Recommendations").html(str);
+        });
 
     });
 
