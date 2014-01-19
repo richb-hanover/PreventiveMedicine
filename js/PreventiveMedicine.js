@@ -52,12 +52,16 @@ var PreventiveMedicine = (function ($) {
         var k = "";             // the rule's key
         var v = "";             // that rule key's value
         var f = "";             // value of that key's Field on the Form
+        var sawMatch = false;   // init to false; set to true any time we match
 
         for (key in theRule) {
             k = key;
             v = theRule[key];
+            if (k.indexOf("FIELD") == 0) { continue; }
             if (v == null || v == "") { continue; }
-            if (v == "ckH1gtSexPartners") break;
+            if (k == "ckPGestationalDiabetes")  {
+                return "";
+            }
 
             if (key == "Recommendation") {
                 curRec = v;
@@ -76,31 +80,43 @@ var PreventiveMedicine = (function ($) {
             if (key == "numMinAge") {
                 n_val = parseFloat(v);
                 if (isNaN(n_val) || age < n_val) { return "" }
+                sawMatch = true;
                 continue;
             } else if (key == "numMaxAge") {
                 n_val = parseFloat(v);
                 if (isNaN(n_val) || age > n_val) { return "" }
+                sawMatch = true;
                 continue;
             } else if (key == "numBmi") {
                 n_val = parseFloat(v);
                 if (isNaN(n_bmi) || n_bmi > n_val) { return "" }
+                sawMatch = true;
                 continue;
             } else if (key == "gender") {
                 f = $("input[name=gender]:checked").val();
                 if (v != f)   { return "" }
+                sawMatch = true;
                 continue;
             } else {
-                f = $("#"+key).val();
-                if (f == null || f == "") { return "" }
-                continue;
+                f = $("#"+key).is(':checked');
+                if (f) {
+                    sawMatch = true;
+                    continue;
+                }
+                return "";
             }
 
 
 
 
         }
-        // Went through all columns without a failure so this is a match
-        return  curRec + "<small><a href='" + URL + "'> More</a></small><br />";
+        if (sawMatch)   {
+            // Went through all columns without a failure so this is a match
+            return  curRec + "<small><a href='" + URL + "'> More</a></small><br />";
+        } else {
+            return "";
+        }
+
     }
 
     my.init= function(){
