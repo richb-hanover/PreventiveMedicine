@@ -25,6 +25,17 @@ var PreventiveMedicine = (function ($) {
 //        // ...
 //    };
 
+// AddCondition - adds the key and value of each condition that matched to form the recommendation
+// return the info so it can be accumulated.
+
+    function FormatCondition(k, v, i, r){
+        var retstr = "";
+        if (r == "") {
+            retstr = "Row " + i.toString() + ":"; // uses row number of the spreadsheet - currently has three header lines
+        }
+        return retstr + "\n" + k + " " + v
+    }
+
 // Process Rules - scan each of the rules from the globalrulesobject examining the various columns.
 
     function ProcessRules() {
@@ -54,12 +65,13 @@ var PreventiveMedicine = (function ($) {
         var k = "";             // the rule's key
         var v = "";             // that rule key's value
         var f = "";             // value of that key's Field on the Form
+        var ix = (itsIndex+4).toString(); // row number in the table
         var sawMatch = false;   // init to false; set to true any time we match
+        var reasonstring = "";  // accumulates the criteria used to make the recommendation
 
         for (key in theRule) {
             k = key;
             v = theRule[key];
-//            if (k.indexOf("FIELD38") == 0) { return "" }
             if (k.indexOf("FIELD") == 0) { continue; }
             if (v == null || v == "") { continue; }
             if (k == "ckPGestationalDiabetes")  {
@@ -83,43 +95,34 @@ var PreventiveMedicine = (function ($) {
             if (key == "numMinAge") {
                 n_val = parseFloat(v);
                 if (isNaN(n_val) || age < n_val) { return "" }
+                reasonstring += FormatCondition(k, v, ix, reasonstring);
                 sawMatch = true;
-                continue;
             } else if (key == "numMaxAge") {
                 n_val = parseFloat(v);
                 if (isNaN(n_val) || age > n_val) { return "" }
+                reasonstring += FormatCondition(k, v, ix, reasonstring);
                 sawMatch = true;
-                continue;
             } else if (key == "numBmi") {
                 n_val = parseFloat(v);
                 if (isNaN(n_bmi) || n_bmi > n_val) { return "" }
+                reasonstring += FormatCondition(k, v, ix, reasonstring);
                 sawMatch = true;
-                continue;
             } else if (key == "gender") {
                 f = $("input[name=gender]:checked").val();
                 if (v != f)   { return "" }
+                reasonstring += FormatCondition(k, v, ix, reasonstring);
                 sawMatch = true;
-                continue;
-            } else if (key == 'ckH5gtDrink5Day') {  // TOTAL CROCK FOR THE DEMO - 19Jan2014 -reb
-                return "";
-
             } else {
                 f = $("#"+key).is(':checked');      // check all the other checkboxes
-                if (f) {
-                    sawMatch = true;
-                    continue;
-                }
-                return "";
+                if (!f) { return "" }               // return if the matching checkbox is *not* checked
+                reasonstring += FormatCondition(k, v, ix, reasonstring);
+                sawMatch = true;
             }
 
+        } // end of looping over the keys
 
-
-
-        }
-        if (sawMatch)   {
-            // Went through all columns without a failure so this is a match
-//            return  curRec + " (" + itsIndex.toString()+ ") <small><a href='" + URL + "'> More</a></small><br />";
-            return  curRec + " <small><a href='" + URL + "'> More</a></small><br />";
+        if (sawMatch)   { // Went through all columns without a failure so this is a match
+            return  "<div title='" + reasonstring +"'>" +  curRec + "<small><a href='" + URL + "'> More</a></small></div>";
 
         } else {
             return "";
